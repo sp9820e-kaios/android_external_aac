@@ -2388,6 +2388,7 @@ const element_list_t * getBitstreamElementList(AUDIO_OBJECT_TYPE aot, SCHAR epCo
 {
   switch (aot) {
     case AOT_AAC_LC:
+    case AOT_AAC_MAIN:
     case AOT_SBR:
     case AOT_PS:
       FDK_ASSERT(epConfig == -1);

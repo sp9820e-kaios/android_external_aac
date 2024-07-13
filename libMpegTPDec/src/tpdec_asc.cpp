@@ -1279,6 +1279,7 @@ TRANSPORTDEC_ERROR AudioSpecificConfig_Parse(
   {
 #ifdef TP_GA_ENABLE
     case AOT_AAC_LC:
+    case AOT_AAC_MAIN:
     case AOT_ER_AAC_LC:
     case AOT_ER_AAC_LD:
     case AOT_ER_AAC_SCAL:
@@ -1324,6 +1325,7 @@ TRANSPORTDEC_ERROR AudioSpecificConfig_Parse(
   {
 #if defined(TP_GA_ENABLE) || defined(TP_USAC_ENABLE)
     case AOT_AAC_LC:
+    case AOT_AAC_MAIN:
     case AOT_ER_AAC_LC:
     case AOT_ER_AAC_SCAL:
     case AOT_ER_BSAC:

@@ -309,6 +309,7 @@ SBR_ERROR sbrDecoder_ResetElement (
   if (self->numSbrElements == 1) {
     switch ( self->coreCodec ) {
     case AOT_AAC_LC:
+    case AOT_AAC_MAIN:
     case AOT_SBR:
     case AOT_PS:
     case AOT_ER_AAC_SCAL:
@@ -383,6 +384,7 @@ int sbrDecoder_isCoreCodecValid(AUDIO_OBJECT_TYPE coreCodec)
 {
   switch (coreCodec) {
     case AOT_AAC_LC:
+    case AOT_AAC_MAIN:
     case AOT_SBR:
     case AOT_PS:
     case AOT_ER_AAC_SCAL:
@@ -494,6 +496,7 @@ SBR_ERROR sbrDecoder_InitElement (
     if ( elementIndex == 0 && elementID == ID_SCE ) {
       switch (coreCodec) {
         case AOT_AAC_LC:
+        case AOT_AAC_MAIN:
         case AOT_SBR:
         case AOT_PS:
         case AOT_ER_AAC_SCAL:
@@ -1127,6 +1130,7 @@ SBR_ERROR sbrDecoder_Parse(
         case AOT_SBR:
         case AOT_PS:
         case AOT_AAC_LC:
+        case AOT_AAC_MAIN:
           {
             /* This sanity check is only meaningful with General Audio bitstreams */
             int alignBits = valBits & 0x7;

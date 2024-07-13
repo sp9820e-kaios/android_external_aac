@@ -161,6 +161,7 @@ amm-info@iis.fraunhofer.de
 
 #define CAN_DO_PS(aot) \
   ((aot) == AOT_AAC_LC \
+|| (aot) == AOT_AAC_MAIN \
 || (aot) == AOT_SBR \
 || (aot) == AOT_PS \
 || (aot) == AOT_ER_BSAC \
@@ -846,6 +847,9 @@ LINKSPEC_CPP AAC_DECODER_ERROR CAacDecoder_Init(HANDLE_AACDECODER self, const CS
   // leave profile on default (=-1) for all other supported MPEG-4 aot's except aot=2 (=AAC-LC)
   switch (asc->m_aot) {
   case AOT_AAC_LC:
+    self->streamInfo.profile = 1;
+    break;
+  case AOT_AAC_MAIN:
     self->streamInfo.profile = 1;
     break;
 
